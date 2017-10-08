@@ -1,23 +1,15 @@
 import React from 'react'
 
-const MinusPlus = ({value, saved}) => (
-  <div className='MinusPlus'>
-
+const LastTransaction = ({transaction}) => (
+  <div className='LastTransaction'>
     <div className='value'>
-      <div className='ligth'><img src='/static/img/ligth.png' /></div>
-      ${value}
+      <div className='ligth'><img src='/static/img/purchase.png' /></div>
+      {transaction.TransactionDescription}
     </div>
-
-    <div className='saved'>
-      <div className='piggy'><img src='/static/img/saved.png' /></div>
-      ${saved}
-    </div>
-
-
 
     {/* language=CSS */}
     <style jsx>{`
-      .MinusPlus {
+      .LastTransaction {
         display: inline-flex;
         flex-direction: row;
         flex-shrink: 0;
@@ -27,6 +19,7 @@ const MinusPlus = ({value, saved}) => (
 
       .ligth  img {
         width: 30px;
+        margin-right: 7px;
       }
 
       .saved img {
@@ -36,8 +29,9 @@ const MinusPlus = ({value, saved}) => (
       .value {
         display: inline-flex;
         flex-direction: row;
-        font-size: 25px;
+        font-size: 16px;
         color: #ddd;
+        align-items: center;
       }
 
       .saved {
@@ -50,4 +44,4 @@ const MinusPlus = ({value, saved}) => (
   </div>
 )
 
-export default MinusPlus
+export default LastTransaction
